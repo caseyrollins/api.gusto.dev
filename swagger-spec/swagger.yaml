@@ -68,6 +68,7 @@ x-tagGroups:
       - Jobs
       - Time Off Requests
       - States
+      - Employee Benefits
 
 tags:
   - name: Authentication
@@ -200,3 +201,6 @@ paths:
 
   /states:
     $ref: 'states/detail.yaml'
+
+  /employee_benefits/{employee_benefit_id}:
+    $ref: 'employee_benefits/detail.yaml'
