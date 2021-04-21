@@ -2314,8 +2314,8 @@ paths:
                   type: string
                   description: Must be "Employee" if send_offer is set to true.
                   enum:
-                    - '"Employee"'
-                    - '"Contractor"'
+                    - Employee
+                    - Contractor
                 send_offer:
                   type: boolean
                   description: Required if onboarding_person_type is set to "Employee".
@@ -2394,8 +2394,8 @@ paths:
                   type: string
                   description: Must be "Employee" if send_offer is set to true.
                   enum:
-                    - '"Employee"'
-                    - '"Contractor"'
+                    - Employee
+                    - Contractor
                 send_offer:
                   type: boolean
                   description: Required if onboarding_person_type is set to "Employee".
@@ -4410,9 +4410,9 @@ components:
         gusto_person_type:
           type: string
           enum:
-            - '"Employee"'
-            - '"Contractor"'
-            - '"Candidate"'
+            - Employee
+            - Contractor
+            - Candidate
         gusto_person_id:
           type: number
         gusto_person_uuid:
