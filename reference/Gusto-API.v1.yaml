@@ -8,6 +8,7 @@ tags:
   - name: Benefits
   - name: Locations
   - name: Jobs
+  - name: Job Applicants (Beta)
   - name: Compensations
   - name: Pay Schedules
   - name: Garnishments
@@ -2303,32 +2304,27 @@ paths:
               properties:
                 first_name:
                   type: string
-                  minLength: 1
                 last_name:
                   type: string
-                  minLength: 1
                 email:
                   type: string
-                  minLength: 1
                 phone:
                   type: string
-                  minLength: 1
                 onboarding_person_type:
                   type: string
-                  minLength: 1
-                  description: Can be "Employee" or "Contractor". Must be "Employee" if send_offer is set to true.
+                  description: Must be "Employee" if send_offer is set to true.
+                  enum:
+                    - '"Employee"'
+                    - '"Contractor"'
                 send_offer:
                   type: boolean
                   description: Required if onboarding_person_type is set to "Employee".
                 job_title:
                   type: string
-                  minLength: 1
                 date_of_birth:
                   type: string
-                  minLength: 1
                 start_date:
                   type: string
-                  minLength: 1
             examples:
               Example:
                 value:
@@ -2388,32 +2384,27 @@ paths:
               properties:
                 first_name:
                   type: string
-                  minLength: 1
                 last_name:
                   type: string
-                  minLength: 1
                 email:
                   type: string
-                  minLength: 1
                 phone:
                   type: string
-                  minLength: 1
                 onboarding_person_type:
                   type: string
-                  minLength: 1
-                  description: Can be "Employee" or "Contractor". Must be "Employee" if send_offer is set to true.
+                  description: Must be "Employee" if send_offer is set to true.
+                  enum:
+                    - '"Employee"'
+                    - '"Contractor"'
                 send_offer:
                   type: boolean
                   description: Required if onboarding_person_type is set to "Employee".
                 job_title:
                   type: string
-                  minLength: 1
                 date_of_birth:
                   type: string
-                  minLength: 1
                 start_date:
                   type: string
-                  minLength: 1
               required:
                 - first_name
                 - last_name
@@ -4387,58 +4378,6 @@ components:
     Job-Applicant:
       description: The representation of a job applicant in Gusto.
       type: object
-      properties:
-        uuid:
-          type: string
-          minLength: 1
-        first_name:
-          type: string
-          minLength: 1
-        last_name:
-          type: string
-          minLength: 1
-        email:
-          type: string
-          minLength: 1
-        phone:
-          type: string
-          minLength: 1
-        gusto_person_type:
-          type: string
-          minLength: 1
-        gusto_person_id:
-          type: number
-        gusto_person_uuid:
-          type: string
-          minLength: 1
-        company_uuid:
-          type: string
-          minLength: 1
-        company_id:
-          type: number
-        job_title:
-          type: string
-          minLength: 1
-        start_date:
-          type: string
-          minLength: 1
-        date_of_birth:
-          type: string
-          minLength: 1
-      required:
-        - uuid
-        - first_name
-        - last_name
-        - email
-        - phone
-        - gusto_person_type
-        - gusto_person_id
-        - gusto_person_uuid
-        - company_uuid
-        - company_id
-        - job_title
-        - start_date
-        - date_of_birth
       x-examples:
         Example:
           uuid: 94535f4f-b784-46e0-82c4-962c72fe5c99
@@ -4457,6 +4396,51 @@ components:
       title: Job-Applicant
       x-tags:
         - Job Applicants (Beta)
+      properties:
+        uuid:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        gusto_person_type:
+          type: string
+          enum:
+            - '"Employee"'
+            - '"Contractor"'
+            - '"Candidate"'
+        gusto_person_id:
+          type: number
+        gusto_person_uuid:
+          type: string
+        company_uuid:
+          type: string
+        company_id:
+          type: number
+        job_title:
+          type: string
+        start_date:
+          type: string
+        date_of_birth:
+          type: string
+      required:
+        - uuid
+        - first_name
+        - last_name
+        - email
+        - phone
+        - gusto_person_type
+        - gusto_person_id
+        - gusto_person_uuid
+        - company_uuid
+        - company_id
+        - job_title
+        - start_date
+        - date_of_birth
   securitySchemes:
     Authorization:
       type: http
