@@ -3293,8 +3293,8 @@ components:
           type: boolean
           description: Specifies if the location is the company's mailing address. Only included if the location belongs to a company.
         filing_address:
-          type: string
           description: Specifies if the location is the company's filing address. Only included if the location belongs to a company.
+          type: boolean
     Employee:
       title: Employee
       type: object
