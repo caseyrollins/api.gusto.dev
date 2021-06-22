@@ -449,10 +449,6 @@ paths:
                   state: CA
                   zip: '94107'
                   country: USA
-          multipart/form-data:
-            schema:
-              type: object
-              properties: {}
         description: Create a company location.
       tags:
         - Locations
