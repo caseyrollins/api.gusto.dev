@@ -504,6 +504,12 @@ paths:
                   type: string
                 country:
                   type: string
+                mailing_address:
+                  type: boolean
+                  description: 'For a company location, specify if this location is the company''s mailing address.'
+                filing_address:
+                  type: boolean
+                  description: 'For a company location, specify if this location is the company''s filing address.'
             examples:
               Example:
                 value:
