@@ -1219,7 +1219,7 @@ paths:
         `?end_date='2019-01-01'`
 
         Returns all time off requests where the request end date is equal to or before January 1, 2019.
-         
+
         `?start_date='2019-05-01'&end_date='2019-08-31'`
 
         Returns all time off requests where the request start date is equal to or after May 1, 2019 and the request end date is equal to or before August 31, 2019.
@@ -1681,10 +1681,10 @@ paths:
       description: |-
         A payroll item in Gusto is associated to an earning type to name the type of earning described by the payroll item.
 
-        #### Default Earning Type 
+        #### Default Earning Type
         Certain earning types are special because they have tax considerations. Those earning types are mostly the same for every company depending on its legal structure (LLC, Corporation, etc.)
 
-        #### Custom Earning Type 
+        #### Custom Earning Type
         Custom earning types are all the other earning types added specifically for a company.
     post:
       summary: Create a custom earning type
@@ -1695,7 +1695,7 @@ paths:
           $ref: '#/components/responses/Earning-Type-Object'
       operationId: post-v1-companies-company_id-earning_types
       description: |-
-        Create a custom earning type. 
+        Create a custom earning type.
 
         If an inactive earning type exists with the same name, this will reactivate it instead of creating a new one.
       requestBody:
@@ -2222,56 +2222,58 @@ paths:
                   type: string
                   description: The current version of the object. See the versioning guide for details using this field.
                 employee_compensations:
-                  type: object
-                  required:
-                    - employee_id
-                  description: ''
-                  properties:
-                    employee_id:
-                      type: integer
-                      description: The ID of the employee.
-                    fixed_compensations:
-                      type: array
-                      items:
-                        type: object
-                        description: 'An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.'
-                        properties:
-                          name:
-                            type: string
-                            description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
-                          amount:
-                            type: string
-                            description: The amount of the compensation for the pay period.
-                          job_id:
-                            type: integer
-                            description: The ID of the job for the compensation.
-                    hourly_compensations:
-                      type: array
-                      items:
-                        type: object
-                        description: 'An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.'
-                        properties:
-                          name:
-                            type: string
-                            description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
-                          hours:
-                            type: string
-                            description: The number of hours to be compensated for this pay period.
-                          job_id:
-                            type: integer
-                            description: The ID of the job for the compensation.
-                    paid_time_off:
-                      type: array
-                      description: An array of all paid time off the employee is eligible for this pay period.
-                      items:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 'The name of the PTO. This also serves as the unique, immutable identifier for the PTO.'
-                          hours:
-                            type: string
-                            description: The hours of this PTO taken during the pay period.
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - employee_id
+                    description: ''
+                    properties:
+                      employee_id:
+                        type: integer
+                        description: The ID of the employee.
+                      fixed_compensations:
+                        type: array
+                        items:
+                          type: object
+                          description: 'An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.'
+                          properties:
+                            name:
+                              type: string
+                              description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
+                            amount:
+                              type: string
+                              description: The amount of the compensation for the pay period.
+                            job_id:
+                              type: integer
+                              description: The ID of the job for the compensation.
+                      hourly_compensations:
+                        type: array
+                        items:
+                          type: object
+                          description: 'An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.'
+                          properties:
+                            name:
+                              type: string
+                              description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
+                            hours:
+                              type: string
+                              description: The number of hours to be compensated for this pay period.
+                            job_id:
+                              type: integer
+                              description: The ID of the job for the compensation.
+                      paid_time_off:
+                        type: array
+                        description: An array of all paid time off the employee is eligible for this pay period.
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              description: 'The name of the PTO. This also serves as the unique, immutable identifier for the PTO.'
+                            hours:
+                              type: string
+                              description: The hours of this PTO taken during the pay period.
               required:
                 - version
                 - employee_compensations
@@ -2280,28 +2282,28 @@ paths:
                 value:
                   version: 19289df18e6e20f797de4a585ea5a91535c7ddf7
                   employee_compensations:
-                    employee_id: 1123581321345589
-                    fixed_compensations:
-                      - name: Bonus
-                        amount: '200.00'
-                        job_id: 1
-                    hourly_compensations:
-                      - name: Regular Hours
-                        hours: '30.000'
-                        job_id: 1
-                      - name: Double Overtime
-                        hours: '20.000'
-                        job_id: 1
-                      - name: Overtime
-                        hours: '10.000'
-                        job_id: 2
-                    paid_time_off:
-                      - name: Vacation Hours
-                        hours: '25.000'
-                      - name: Sick Hours
-                        hours: '10.000'
-                      - name: Holiday Hours
-                        hours: '8.000'
+                    - employee_id: 1123581321345589
+                      fixed_compensations:
+                        - name: Bonus
+                          amount: '200.00'
+                          job_id: 1
+                      hourly_compensations:
+                        - name: Regular Hours
+                          hours: '30.000'
+                          job_id: 1
+                        - name: Double Overtime
+                          hours: '20.000'
+                          job_id: 1
+                        - name: Overtime
+                          hours: '10.000'
+                          job_id: 2
+                      paid_time_off:
+                        - name: Vacation Hours
+                          hours: '25.000'
+                        - name: Sick Hours
+                          hours: '10.000'
+                        - name: Holiday Hours
+                          hours: '8.000'
     get:
       summary: Get a single payroll
       tags:
@@ -2311,7 +2313,7 @@ paths:
           $ref: '#/components/responses/Payroll-Object'
       operationId: get-v1-companies-company_id-payrolls-payroll_id
       description: |-
-        Returns a payroll. 
+        Returns a payroll.
 
         Notes:
         * Hour and dollar amounts are returned as string representations of numeric decimals.
@@ -2374,56 +2376,58 @@ paths:
                   type: string
                   description: The current version of the object. See the versioning guide for details using this field.
                 employee_compensations:
-                  type: object
-                  required:
-                    - employee_id
-                  description: ''
-                  properties:
-                    employee_id:
-                      type: integer
-                      description: The ID of the employee.
-                    fixed_compensations:
-                      type: array
-                      items:
-                        type: object
-                        description: 'An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.'
-                        properties:
-                          name:
-                            type: string
-                            description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
-                          amount:
-                            type: string
-                            description: The amount of the compensation for the pay period.
-                          job_id:
-                            type: integer
-                            description: The ID of the job for the compensation.
-                    hourly_compensations:
-                      type: array
-                      items:
-                        type: object
-                        description: 'An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.'
-                        properties:
-                          name:
-                            type: string
-                            description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
-                          hours:
-                            type: string
-                            description: The number of hours to be compensated for this pay period.
-                          job_id:
-                            type: integer
-                            description: The ID of the job for the compensation.
-                    paid_time_off:
-                      type: array
-                      description: An array of all paid time off the employee is eligible for this pay period.
-                      items:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                            description: 'The name of the PTO. This also serves as the unique, immutable identifier for the PTO.'
-                          hours:
-                            type: string
-                            description: The hours of this PTO taken during the pay period.
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - employee_id
+                    description: ''
+                    properties:
+                      employee_id:
+                        type: integer
+                        description: The ID of the employee.
+                      fixed_compensations:
+                        type: array
+                        items:
+                          type: object
+                          description: 'An array of fixed compensations for the employee. Fixed compensations include tips, bonuses, and one time reimbursements.'
+                          properties:
+                            name:
+                              type: string
+                              description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
+                            amount:
+                              type: string
+                              description: The amount of the compensation for the pay period.
+                            job_id:
+                              type: integer
+                              description: The ID of the job for the compensation.
+                      hourly_compensations:
+                        type: array
+                        items:
+                          type: object
+                          description: 'An array of hourly compensations for the employee. Hourly compensations include regular, overtime, and double overtime hours.'
+                          properties:
+                            name:
+                              type: string
+                              description: 'The name of the compensation. This also serves as the unique, immutable identifier for this compensation.'
+                            hours:
+                              type: string
+                              description: The number of hours to be compensated for this pay period.
+                            job_id:
+                              type: integer
+                              description: The ID of the job for the compensation.
+                      paid_time_off:
+                        type: array
+                        description: An array of all paid time off the employee is eligible for this pay period.
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                              description: 'The name of the PTO. This also serves as the unique, immutable identifier for the PTO.'
+                            hours:
+                              type: string
+                              description: The hours of this PTO taken during the pay period.
               required:
                 - version
                 - employee_compensations
@@ -2432,28 +2436,28 @@ paths:
                 value:
                   version: 19289df18e6e20f797de4a585ea5a91535c7ddf7
                   employee_compensations:
-                    employee_id: 1123581321345589
-                    fixed_compensations:
-                      - name: Bonus
-                        amount: '200.00'
-                        job_id: 1
-                    hourly_compensations:
-                      - name: Regular Hours
-                        hours: '30.000'
-                        job_id: 1
-                      - name: Double overtime
-                        hours: '20.000'
-                        job_id: 1
-                      - name: Overtime
-                        hours: '10.000'
-                        job_id: 2
-                    paid_time_off:
-                      - name: Vacation Hours
-                        hours: '25.000'
-                      - name: Sick Hours
-                        hours: '10.000'
-                      - name: Holiday Hours
-                        hours: '8.000'
+                    - employee_id: 1123581321345589
+                      fixed_compensations:
+                        - name: Bonus
+                          amount: '200.00'
+                          job_id: 1
+                      hourly_compensations:
+                        - name: Regular Hours
+                          hours: '30.000'
+                          job_id: 1
+                        - name: Double overtime
+                          hours: '20.000'
+                          job_id: 1
+                        - name: Overtime
+                          hours: '10.000'
+                          job_id: 2
+                      paid_time_off:
+                        - name: Vacation Hours
+                          hours: '25.000'
+                        - name: Sick Hours
+                          hours: '10.000'
+                        - name: Holiday Hours
+                          hours: '8.000'
   /v1/partner_managed_companies:
     post:
       summary: Create a partner managed company (Beta)
@@ -3105,7 +3109,7 @@ paths:
       description: |-
         **This endpoint is in beta. Please contact developer-gws@gusto.com if you’d like to have more information and use it for production. Note, this may require you to enter a different agreement with Gusto.**
 
-        Performs calculations for taxes, benefits, and deductions for an unprocessed payroll. The calculated payroll details provide a preview of the actual values that will be used when the payroll is run. 
+        Performs calculations for taxes, benefits, and deductions for an unprocessed payroll. The calculated payroll details provide a preview of the actual values that will be used when the payroll is run.
 
         This endpoint is asynchronous and responds with only a 202 HTTP status. To view the details of the calculated payroll, use the GET /v1/companies/{company_id}/payrolls/{payroll_id} endpoint with the *show_calculation* and *includes* params
       parameters: []
