@@ -4949,6 +4949,8 @@ components:
           processed: true
           payroll_id: 7786400908986532
           payroll_uuid: b50e611d-8f3d-4f24-b001-46675f7b5777
+          company_id: 7756341740978008
+          company_uuid: 6bf7807c-a5a0-4f4d-b2e7-3fbb4b2299fb
           pay_period:
             start_date: '2021-02-01'
             end_date: '2021-02-15'
@@ -5062,6 +5064,14 @@ components:
         payroll_uuid:
           type: string
           description: A unique identifier of the payroll.
+          readOnly: true
+        company_id:
+          type: number
+          description: The ID of the company for the payroll.
+          readOnly: true
+        company_uuid:
+          type: string
+          description: A unique identifier of the company for the payroll.
           readOnly: true
         pay_period:
           type: object
@@ -6866,6 +6876,8 @@ components:
                 processed: true
                 payroll_id: 7786400908986532
                 payroll_uuid: b50e611d-8f3d-4f24-b001-46675f7b5777
+                company_id: 7756341740978008
+                company_uuid: 6bf7807c-a5a0-4f4d-b2e7-3fbb4b2299fb
                 pay_period:
                   start_date: '2021-02-01'
                   end_date: '2021-02-15'
@@ -6972,6 +6984,8 @@ components:
                   processed: true
                   payroll_id: 7786400908986532
                   payroll_uuid: b50e611d-8f3d-4f24-b001-46675f7b5777
+                  company_id: 7756341740978008
+                  company_uuid: 6bf7807c-a5a0-4f4d-b2e7-3fbb4b2299fb
                   pay_period:
                     start_date: '2021-02-01'
                     end_date: '2021-02-15'
