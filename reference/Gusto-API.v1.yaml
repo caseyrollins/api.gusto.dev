@@ -2216,6 +2216,7 @@ paths:
       responses:
         '200':
           $ref: '#/components/responses/Payroll-Object'
+      operationId: put-v1-companies-company_id-payrolls
       description: This endpoint allows you to update information for one or more employees for a specific **unprocessed** payroll.
       requestBody:
         content:
