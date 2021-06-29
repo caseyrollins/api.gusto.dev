@@ -33,7 +33,7 @@ servers:
   - description: Production
     url: 'https://api.gusto.com'
 paths:
-  '/v1/employees/{employee_id}':
+  '/v1/employees/{employee_id_or_uuid}':
     get:
       summary: Get an employee
       operationId: get-v1-employees
@@ -105,11 +105,11 @@ paths:
     parameters:
       - schema:
           type: string
-        name: employee_id
+        name: employee_id_or_uuid
         in: path
         required: true
-        description: The ID of the employee
-  '/v1/companies/{company_id}':
+        description: The ID or UUID of the employee
+  '/v1/companies/{company_id_or_uuid}':
     get:
       summary: Get a company
       operationId: get-v1-companies
@@ -123,18 +123,18 @@ paths:
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
-        description: The ID of the company
+        description: The ID or UUID of the company
         required: true
-  '/v1/companies/{company_id}/employees':
+  '/v1/companies/{company_id_or_uuid}/employees':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
         required: true
-        description: The ID of the company
+        description: The ID or UUID of the company
     get:
       summary: Get employees of a company
       operationId: get-v1-companies-company_id-employees
@@ -326,14 +326,14 @@ paths:
         description: Create a job.
       tags:
         - Jobs
-  '/v1/companies/{company_id}/locations':
+  '/v1/companies/{company_id_or_uuid}/locations':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
         required: true
-        description: The ID of the company
+        description: The ID or UUID of the company
     get:
       summary: Get company locations
       responses:
@@ -519,14 +519,14 @@ paths:
         description: Update a location
       tags:
         - Locations
-  '/v1/contractors/{contractor_id}':
+  '/v1/contractors/{contractor_id_or_uuid}':
     parameters:
       - schema:
           type: string
-        name: contractor_id
+        name: contractor_id_or_uuid
         in: path
         required: true
-        description: The ID of the contractor
+        description: The ID or UUID of the contractor
     get:
       summary: Get a contractor
       tags:
@@ -604,14 +604,14 @@ paths:
                   ein: '991113334'
                   wage_type: Fixed
         description: ''
-  '/v1/companies/{company_id}/contractors':
+  '/v1/companies/{company_id_or_uuid}/contractors':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
         required: true
-        description: The ID of the company
+        description: The ID or UUID of the company
     get:
       summary: Get contractors of a company
       tags:
@@ -779,7 +779,7 @@ paths:
           in: query
           name: reimbursement
           description: Reimbursed wages for the contractor .
-  '/v1/companies/{company_id}/contractor_payments/{contractor_payment_id}':
+  '/v1/companies/{company_id}/contractor_payments/{contractor_payment_id_or_uuid}':
     parameters:
       - schema:
           type: string
@@ -789,10 +789,10 @@ paths:
         description: The ID of the company
       - schema:
           type: string
-        name: contractor_payment_id
+        name: contractor_payment_id_or_uuid
         in: path
         required: true
-        description: The ID of the contractor payment
+        description: The ID or UUID of the contractor payment
     get:
       summary: Get a single contractor payment
       tags:
@@ -1986,14 +1986,14 @@ paths:
           description: No Content
       operationId: delete-v1-employee_benefits-employee_benefit_id
       description: Employee benefits represent an employee enrolled in a particular company benefit. It includes information specific to that employee’s enrollment.
-  '/v1/companies/{company_id}/pay_periods':
+  '/v1/companies/{company_id_or_uuid}/pay_periods':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
         required: true
-        description: The ID of the company
+        description: The ID or UUID of the company
     get:
       summary: Get pay periods for a company
       tags:
@@ -2103,13 +2103,13 @@ paths:
             example: '2020-01-31'
           in: query
           name: end_date
-  '/v1/companies/{company_id}/payrolls':
+  '/v1/companies/{company_id_or_uuid}/payrolls':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
-        description: the ID of the company
+        description: The ID or UUID of the company
         required: true
     get:
       summary: Get all payrolls for a company
@@ -2195,20 +2195,20 @@ paths:
                   type: string
               required:
                 - off_cycle
-  '/v1/companies/{company_id}/payrolls/{payroll_id}':
+  '/v1/companies/{company_id_or_uuid}/payrolls/{payroll_id_or_uuid}':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
         required: true
-        description: The ID of the company
+        description: The ID or UUID of the company
       - schema:
           type: string
-        name: payroll_id
+        name: payroll_id_or_uuid
         in: path
         required: true
-        description: 'The ID of the payroll '
+        description: 'The ID or UUID of the payroll '
     put:
       summary: Update a payroll by ID
       tags:
@@ -2340,14 +2340,14 @@ paths:
           in: query
           name: show_calculation
           description: 'with `include`, shows the tax, and/or benefit, and/or deduction details for a calculated, unprocessed payroll. '
-  '/v1/companies/{company_id}/payrolls/{pay_period_start_date}/{pay_period_end_date}':
+  '/v1/companies/{company_id_or_uuid}/payrolls/{pay_period_start_date}/{pay_period_end_date}':
     parameters:
       - schema:
           type: string
-        name: company_id
+        name: company_id_or_uuid
         in: path
         required: true
-        description: The ID of the company
+        description: The ID or UUID of the company
       - schema:
           type: string
         name: pay_period_start_date
