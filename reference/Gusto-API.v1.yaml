@@ -3872,6 +3872,10 @@ components:
           type: number
           description: The unique identifier of the company in Gusto.
           readOnly: true
+        uuid:
+          type: string
+          description: A unique identifier of the company in Gusto.
+          readOnly: true
         name:
           type: string
           description: The name of the company.
@@ -5720,6 +5724,7 @@ components:
                 is_suspended: false
                 company_status: Approved
                 id: 7756341740978008
+                uuid: c7a07c73-a703-4462-9343-1b181182b6e0
                 name: Shoppe Studios LLC
                 trade_name: Record Shoppe
                 locations:
