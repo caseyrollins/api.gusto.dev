@@ -2013,6 +2013,7 @@ paths:
                     - start_date: '2020-12-12'
                       end_date: '2020-12-25'
                       pay_schedule_id: 1409756036510222
+                      pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                       eligible_employees:
                         - id: 1409722316858016
                           job_ids:
@@ -2029,6 +2030,7 @@ paths:
                     - start_date: '2020-12-26'
                       end_date: '2021-01-08'
                       pay_schedule_id: 1409756036510222
+                      pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                       eligible_employees:
                         - id: 1409722316858016
                           job_ids:
@@ -2045,6 +2047,7 @@ paths:
                     - start_date: '2021-01-09'
                       end_date: '2021-01-22'
                       pay_schedule_id: 1409756036510222
+                      pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                       eligible_employees:
                         - id: 1409722316858016
                           job_ids:
@@ -2058,6 +2061,7 @@ paths:
                     - start_date: '2021-01-23'
                       end_date: '2021-02-05'
                       pay_schedule_id: 1409756036510222
+                      pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                       eligible_employees:
                         - id: 1409722316858016
                           job_ids:
@@ -2071,6 +2075,7 @@ paths:
                     - start_date: '2021-02-06'
                       end_date: '2021-02-19'
                       pay_schedule_id: 1409756036510222
+                      pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                       eligible_employees:
                         - id: 1409722316858016
                           job_ids:
@@ -4868,6 +4873,7 @@ components:
           start_date: '2020-01-11'
           end_date: '2020-01-24'
           pay_schedule_id: 1409756036510222
+          pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
           eligible_employees:
             - id: 7740244452464965
               job_ids:
@@ -4890,6 +4896,10 @@ components:
         pay_schedule_id:
           type: number
           description: The ID of the pay schedule to which the pay period belongs.
+          readOnly: true
+        pay_schedule_uuid:
+          type: string
+          description: A unique identifier of the pay schedule to which the pay period belongs.
           readOnly: true
         eligible_employees:
           type: array
@@ -4937,10 +4947,12 @@ components:
           check_date: '2021-02-22'
           processed: true
           payroll_id: 7786400908986532
+          payroll_uuid: b50e611d-8f3d-4f24-b001-46675f7b5777
           pay_period:
             start_date: '2021-02-01'
             end_date: '2021-02-15'
             pay_schedule_id: 7757500908984137
+            pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
           totals:
             company_debit: '121747.71'
             net_pay_debit: '79283.80'
@@ -5046,6 +5058,10 @@ components:
           type: number
           description: The ID of the payroll.
           readOnly: true
+        payroll_uuid:
+          type: string
+          description: A unique identifier of the payroll.
+          readOnly: true
         pay_period:
           type: object
           properties:
@@ -5060,6 +5076,10 @@ components:
             pay_schedule_id:
               type: number
               description: The ID of the pay schedule for the payroll.
+              readOnly: true
+            pay_schedule_uuid:
+              type: string
+              description: A unique identifier of the pay schedule for the payroll..
               readOnly: true
           readOnly: true
         totals:
@@ -6844,10 +6864,12 @@ components:
                 check_date: '2021-02-22'
                 processed: true
                 payroll_id: 7786400908986532
+                payroll_uuid: b50e611d-8f3d-4f24-b001-46675f7b5777
                 pay_period:
                   start_date: '2021-02-01'
                   end_date: '2021-02-15'
                   pay_schedule_id: 7757500908984137
+                  pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                 totals:
                   company_debit: '121747.71'
                   net_pay_debit: '79283.80'
@@ -6948,10 +6970,12 @@ components:
                   check_date: '2021-02-22'
                   processed: true
                   payroll_id: 7786400908986532
+                  payroll_uuid: b50e611d-8f3d-4f24-b001-46675f7b5777
                   pay_period:
                     start_date: '2021-02-01'
                     end_date: '2021-02-15'
                     pay_schedule_id: 7757500908984137
+                    pay_schedule_uuid: 00ebc4a4-ec88-4435-8f45-c505bb63e501
                   totals:
                     company_debit: '121747.71'
                     net_pay_debit: '79283.80'
