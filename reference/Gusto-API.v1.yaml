@@ -3452,7 +3452,7 @@ components:
         jobs:
           type: array
           items:
-            $ref: '#/components/schemas/Job-List'
+            $ref: '#/components/schemas/Job'
         eligible_paid_time_off:
           type: array
           items:
