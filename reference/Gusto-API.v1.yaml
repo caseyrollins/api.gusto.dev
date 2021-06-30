@@ -3314,6 +3314,7 @@ components:
           last_name: Boehm
           email: kory7757869450111548@barton-hermiston.io
           company_id: 7756341740978008
+          company_uuid: c44d66dc-c41b-4a60-9e25-5e93ff8583f2
           manager_id: 7757869432666662
           version: 414dedaca594b77135e0b8d2f398516d
           department: null
@@ -3418,6 +3419,10 @@ components:
         company_id:
           type: number
           description: The ID of the company the employee is employed by.
+          readOnly: true
+        company_uuid:
+          type: string
+          description: A unique identifier of the company the employee is employed by.
           readOnly: true
         manager_id:
           type: number
@@ -5475,6 +5480,7 @@ components:
                 last_name: Jaskolski
                 email: dane7757869450111550@botsford.net
                 company_id: 7756341740978008
+                company_uuid: a007e1ab-3595-43c2-ab4b-af7a5af2e365
                 manager_id: 7757869432666665
                 version: 1c7ba9d62c8bafbfff998ffccad5d296
                 department: null
@@ -5584,6 +5590,7 @@ components:
                   last_name: Boehm
                   email: kory7757869450111548@barton-hermiston.io
                   company_id: 7756341740978008
+                  company_uuid: c44d66dc-c41b-4a60-9e25-5e93ff8583f2
                   manager_id: 7757869432666662
                   version: 414dedaca594b77135e0b8d2f398516d
                   department: null
