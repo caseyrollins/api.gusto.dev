@@ -3308,6 +3308,7 @@ components:
       x-examples:
         Example:
           id: 7757869432666660
+          uuid: 9779767c-6044-48e0-bf68-aeb370b9a2e7
           first_name: Nicole
           middle_initial: M
           last_name: Boehm
@@ -3397,7 +3398,11 @@ components:
       properties:
         id:
           type: number
-          description: The unique identifier of the employee in Gusto.
+          description: The ID of the employee in Gusto.
+          readOnly: true
+        uuid:
+          type: string
+          description: A unique identifier of the employee in Gusto.
           readOnly: true
         first_name:
           type: string
@@ -5464,6 +5469,7 @@ components:
             Example:
               value:
                 id: 7757869432666662
+                uuid: 4b3f930f-82cd-48a8-b797-798686e12e5e
                 first_name: Isom
                 middle_initial: null
                 last_name: Jaskolski
@@ -5572,6 +5578,7 @@ components:
             Example:
               value:
                 - id: 7757869432666660
+                  uuid: 9779767c-6044-48e0-bf68-aeb370b9a2e7
                   first_name: Nicole
                   middle_initial: M
                   last_name: Boehm
