@@ -3455,7 +3455,9 @@ paths:
                   ein_verified: false
                   legal_name: Acme Corp.
         description: 'Attributes related to federal tax details that can be updated via this endpoint include:'
-      description: ''
+      description: |-
+        **This endpoint is in beta. Please contact developer-gws@gusto.com if you’d like to have more information and use it for production. Note, this may require you to enter a different agreement with Gusto.**
+        Updates attributes relevant for a company's federal taxes. This information is required is to onboard a company for use with Gusto Embedded Payroll.
 components:
   schemas:
     Employee:
